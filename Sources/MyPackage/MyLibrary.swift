@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct MyLibrary {
+public struct HelloLibray{
     public init() {}
     
     public func helloWorld() {
