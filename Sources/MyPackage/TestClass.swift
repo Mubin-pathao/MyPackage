@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TestClass : UIView {
+public class TestClass : UIView {
     public override class func awakeFromNib() {
         super.awakeFromNib()
     }
