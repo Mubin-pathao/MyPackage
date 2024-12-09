@@ -7,14 +7,30 @@
 
 import UIKit
 
-class CustomView: UIView {
+public class CustomView: UIView {
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    @IBOutlet weak var iconImageView: UIImageView!
+    @IBOutlet weak var title: UILabel!
+   
+    public override class func awakeFromNib() {
+        super.awakeFromNib()
     }
-    */
 
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        loadNib()
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        loadNib()
+    }
+    
+    @discardableResult func loadNib() -> UIView? {
+        let view = Bundle.main.loadNibNamed("CustomView", owner: self)?.first as? UIView
+        view?.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        view?.frame = bounds
+        if let view { addSubview(view) }
+        return view
+    }
 }
