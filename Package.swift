@@ -17,7 +17,8 @@ let package = Package(
     targets: [
         .target(
             name: "MyPackage", resources: [
-                .process("Resources/CustomView.xib")
+                .process("Resources/CustomView.xib"),
+                .process("Resources/user.png"),
             ]),
         .testTarget(
             name: "MyPackageTests",
