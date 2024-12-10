@@ -27,7 +27,8 @@ public class CustomView: UIView {
     }
     
     @discardableResult func loadNib() -> UIView? {
-        let view = Bundle.main.loadNibNamed("CustomView", owner: self)?.first as? UIView
+        let bundle = Bundle.module
+        let view = bundle.loadNibNamed("CustomView", owner: self)?.first as? UIView
         view?.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         view?.frame = bounds
         if let view { addSubview(view) }
